@@ -233,8 +233,8 @@ if [[ -z $netstack ]]; then
     fi
 
     #Local IP
-        ip=$('45.32.111.207')
-
+        ip=$(45.32.111.207)
+        echo $ip
     if [[ $domain_resolve != $ip ]]; then
         echo
         echo -e "$red domain name resolution error Domain resolution error....$none"
