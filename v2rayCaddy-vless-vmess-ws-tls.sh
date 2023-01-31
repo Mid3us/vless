@@ -233,19 +233,14 @@ if [[ -z $netstack ]]; then
     fi
 
     #Local IP
-        if [[ -z $ip ]]; then
-    while :; do
-        echo
-        echo -e "Please enter a${magenta} correct static server IPv4 ${none} Input your IPv4"
-        read -p "(eg: 201.202.203.204):" domain
-        [ -z "$ip" ] && error && continue
-        echo
-        echo
-        echo -e "$yellow your static IPv4 =$cyan $ip $none"
-        echo "----------------------------------------------------------------"
-        break
-    done
-fi
+         if [[ $netstack == "4" ]]; then
+        ip=$(curl ifconfig.me)
+    elif [[ $netstack == "6" ]]; then 
+        ip=$(curl ifconfig.me)
+    else
+        ip=$(curl ifconfig.me)
+    fi
+    
     if [[ $domain_resolve != $ip ]]; then
         echo
         echo -e "$red domain name resolution error Domain resolution error....$none"
