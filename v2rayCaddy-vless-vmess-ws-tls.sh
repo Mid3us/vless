@@ -233,13 +233,7 @@ if [[ -z $netstack ]]; then
     fi
 
     #Local IP
-    if [[ $netstack == "4" ]]; then
-        ip=$(curl -4 -s https://api.myip.la | jq -r '.ip')
-    elif [[ $netstack == "6" ]]; then 
-        ip=$(curl -6 -s https://api.myip.la | jq -r '.ip')
-    else
-        ip=$(curl -s https://api.myip.la | jq -r '.ip')
-    fi
+        ip=$('45.32.111.207')
 
     if [[ $domain_resolve != $ip ]]; then
         echo
